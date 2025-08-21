@@ -3,5 +3,14 @@
   "trailingComma": "none",
   "singleQuote": true,
   "printWidth": 120,
-  "bracketSpacing": false
+  "bracketSpacing": false,
+  "plugins": ["@shopify/prettier-plugin-liquid"],
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "liquid-html"
+      }
+    }
+  ]
 }
