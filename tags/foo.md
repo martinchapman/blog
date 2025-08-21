@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: foo
+title: foo
 permalink: /tags/foo/
 ---
