@@ -1,3 +1,15 @@
+body {
+  font-family: Domine, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 200%;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+}
+
 img {
   width: 100% !important;
   max-width: 100%;
