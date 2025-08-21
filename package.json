@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "html-validate": "^10.0.0",
+    "prettier": "^3.6.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write .",
+    "lint": "html-validate .",
+    "prettier": "npm run format && npm run lint"
+  }
+}
