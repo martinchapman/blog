@@ -15,3 +15,26 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (width >= 768px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.grid > * {
+  grid-column: 1;
+}
+
+@media (width >= 768px) {
+  .grid > .image {
+    grid-column: 2;
+  }
+}
