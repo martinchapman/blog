@@ -40,3 +40,7 @@ img {
     grid-column: 2;
   }
 }
+
+footer {
+  text-align: right;
+}
