@@ -41,6 +41,10 @@ img {
   }
 }
 
+figcaption {
+  text-align: center;
+}
+
 footer {
   text-align: right;
 }
