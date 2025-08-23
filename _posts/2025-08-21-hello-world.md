@@ -19,7 +19,7 @@ odio. Nulla eu justo tristique, pretium elit in, vestibulum justo. Fusce nec con
 
 {%
   include image.html
-  src="/assets/images/bar.jpg"
+  src="/assets/images/posts/hello-world/bar.jpg"
   alt="penguin"
 %}
 
