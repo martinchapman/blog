@@ -16,7 +16,7 @@ When I do, I know it'll mean that I've started to become more focused on the pre
 
 {%
   include image.html
-  src="/assets/images/posts/photos-goodbye-things/things.jpg"
+  src="/assets/images/posts/photos-goodbye-things/things.png"
   alt=""
 %}
 
