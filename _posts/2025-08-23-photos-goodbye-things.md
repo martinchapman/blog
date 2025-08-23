@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "'take photos of items that are tough to part with'"
-tag: helpful
+tag: home
 ---
 
 "Call me sentimental, but I like to take pictures of the things I'm about to part with, to soften the blow. 
