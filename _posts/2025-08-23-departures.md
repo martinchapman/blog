@@ -26,9 +26,9 @@ The front-end source is available [here](https://git.sr.ht/~martinchapman/depart
 
 ### Function
 
-OpenFaaS ('open source/self-hosted AWS Lambda'), provides an excellent platform for deploying pieces of automated home functionality that are too complex from a cron job, too niche for a [home assistant](https://www.home-assistant.io/) automation, but not complex enough for a dedicated service.
+OpenFaaS ('open source/self-hosted AWS Lambda'), provides an excellent platform for deploying pieces of automated home functionality that are too complex from a cron job, too niche for a [home assistant](https://www.home-assistant.io/) automation or [Node-RED](https://nodered.org/) flow, but not complex enough for a dedicated service.
 The departure board was such a piece of functionality, and thus an OpenFaaS function was created to support it.
-The function was built on an [updated FastAPI template](https://github.com/martinchapman/openfaas-python3-fastapi-template), to ensure suitable performance in the face of its main function: an [infinite loop polling for departure data](https://git.sr.ht/~martinchapman/pi-display/tree/main/item/departures/handler.py#L149) within each SSE connection.
+The function was built on an [updated FastAPI template](https://github.com/martinchapman/openfaas-python3-fastapi-template) to ensure suitable performance in the face of its main function: an [infinite loop polling for departure data](https://git.sr.ht/~martinchapman/pi-display/tree/main/item/departures/handler.py#L149) within each SSE connection.
 OpenFaaS provides [good support for SSE](https://www.openfaas.com/blog/openai-streaming-responses/).
 [Kind](https://kind.sigs.k8s.io/) provides an alternative to full Kubernetes.
 Everything is hosted on a (second) Raspberry Pi (server).
@@ -48,11 +48,11 @@ Environment variables control when the API is polled (e.g. during commuting hour
 ### Front-end
 
 The front-end is served as a static site from an existing [NGINX](https://nginx.org/) instance on the server.
-Its primary function is to initiate the SSE connection on load load, and update the UI depending on the response.
+Its primary function is to initiate the SSE connection on load, and update the UI depending on the response.
 
 A light green background indicates normal running.
 
-A delayed train is indicated by an orange background.
+A delayed train is indicated by an orange background, with the new departure time shown.
 
 {%
   include image.html
