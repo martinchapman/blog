@@ -13,7 +13,7 @@ Although the media is not constantly playing -- instead (as a guess) the content
 
 {%
   include figure.html
-  src="/assets/images/posts/quasitv/ui.gif"
+  src="/assets/images/posts/self-hosted-cable/ui.gif"
   alt="quasitv main ui"
 %}
 
@@ -34,7 +34,7 @@ A [separate function](https://git.sr.ht/~martinchapman/plex-functions/tree/main/
 
 {%
   include figure.html
-  src="/assets/images/posts/quasitv/architecture.png"
+  src="/assets/images/posts/self-hosted-cable/architecture.png"
   alt="functions supporting collections channels"
 %}
 

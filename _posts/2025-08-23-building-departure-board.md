@@ -18,7 +18,7 @@ The front-end source is available [here](https://git.sr.ht/~martinchapman/depart
 
 {%
   include figure.html
-  src="/assets/images/posts/departures/screen.jpg"
+  src="/assets/images/posts/building-departure-board/screen.jpg"
   alt="minimal departures display"
 %}
 
@@ -35,7 +35,7 @@ Everything is hosted on a (second) Raspberry Pi {% include ref.html ref="departu
 
 {%
   include figure.html
-  src="/assets/images/posts/departures/architecture.png"
+  src="/assets/images/posts/building-departure-board/architecture.png"
   alt="departure display architecture"
 %}
 
@@ -56,7 +56,7 @@ A delayed train is indicated by an orange background, with the new departure tim
 
 {%
   include figure.html
-  src="/assets/images/posts/departures/delayed.png"
+  src="/assets/images/posts/building-departure-board/delayed.png"
   alt="a delayed train"
 %}
 
@@ -64,7 +64,7 @@ A delayed train is indicated by a red background and strikethrough.
 
 {%
   include figure.html
-  src="/assets/images/posts/departures/cancelled.png"
+  src="/assets/images/posts/building-departure-board/cancelled.png"
   alt="a cancelled train"
 %}
 
