@@ -51,7 +51,6 @@ iframe {
 
 figure {
   counter-increment: figcount;
-  margin: 1.5em 0;
 }
 
 figure figcaption::before {
