@@ -20,6 +20,11 @@ img {
   height: auto;
 }
 
+iframe {
+  width: 100% !important;
+  max-width: 100%;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
