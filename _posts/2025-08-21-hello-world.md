@@ -15,10 +15,10 @@ sapien a felis facilisis bibendum. Morbi felis nulla, blandit at placerat id, di
 augue malesuada fermentum. Fusce pulvinar lobortis felis. Nunc a interdum nisi. Praesent vitae tortor et ante finibus
 faucibus ac eu mauris. In maximus fermentum lacus, ut pulvinar turpis commodo id. Nullam ornare tellus nec feugiat
 vestibulum. Curabitur non metus non quam euismod ultrices. Quisque vitae massa dictum, consectetur arcu quis, ultricies
-odio. Nulla eu justo tristique, pretium elit in, vestibulum justo. Fusce nec congue leo.
+odio. Nulla eu justo tristique, pretium elit in, vestibulum justo. Fusce nec congue leo  {% include ref.html ref="penguin" %}.
 
 {%
-  include image.html
+  include figure.html
   src="/assets/images/posts/hello-world/bar.jpg"
   alt="penguin"
 %}

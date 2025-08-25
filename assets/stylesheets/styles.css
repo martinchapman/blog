@@ -5,6 +5,7 @@ body {
   font-style: normal;
   line-height: 200%;
   text-align: justify;
+  counter-reset: figcount;
 }
 
 h1,
@@ -46,6 +47,16 @@ iframe {
   .grid > .image {
     grid-column: 2;
   }
+}
+
+figure {
+  counter-increment: figcount;
+  margin: 1.5em 0;
+}
+
+figure figcaption::before {
+  content: counter(figcount) '. ';
+  font-weight: bold;
 }
 
 figcaption {

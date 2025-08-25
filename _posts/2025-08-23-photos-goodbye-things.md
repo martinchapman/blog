@@ -17,7 +17,7 @@ When I do, I know it'll mean that I've started to become more focused on the pre
 {%
   include image.html
   src="/assets/images/posts/photos-goodbye-things/things.png"
-  alt=""
+  alt="Goodbye, Things. 2017"
 %}
 
 -- Fumio Sasaki ([Goodbye, Things](https://www.penguin.co.uk/books/305840/goodbye-things-by-sasaki-fumio/9780141986388), 2017)

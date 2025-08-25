@@ -8,7 +8,7 @@ tag: home-automation
 
 **How?** Inspired by this [train departure display](https://github.com/chrisys/train-departure-display), a display showing the times of the next two departing trains, along with the current time, was created and placed next to the front door for easy viewing.
 <br />
-In contrast to the original display, a more minimal approach was taken: only three values are displayed, and the relative size of each panel differentiates the current time (left) from the two departure times (right).
+In contrast to the original display, a more minimal approach was taken: only three values are displayed {% include ref.html ref="minimal departures display" %}, and the relative size of each panel differentiates the current time (left) from the two departure times (right).
 Late running and cancelled trains are indicated by a change in colour to the back panels (orange late; red cancelled).
 Font strikethrough emphasises cancellations.
 <br />
@@ -17,7 +17,7 @@ The display itself is a [Raspberry Pi Touch Display](https://thepihut.com/produc
 The front-end source is available [here](https://git.sr.ht/~martinchapman/departures/tree/main/item/index.jinja) and the backend source [here](https://git.sr.ht/~martinchapman/pi-display/tree/main/item/departures/handler.py). 
 
 {%
-  include image.html
+  include figure.html
   src="/assets/images/posts/departures/screen.jpg"
   alt="minimal departures display"
 %}
@@ -31,10 +31,10 @@ The departure board was such a piece of functionality, and thus an OpenFaaS func
 The function was built on an [updated FastAPI template](https://github.com/martinchapman/openfaas-python3-fastapi-template) to ensure suitable performance in the face of its main function: an [infinite loop polling for departure data](https://git.sr.ht/~martinchapman/pi-display/tree/main/item/departures/handler.py#L149) within each SSE connection.
 OpenFaaS provides [good support for SSE](https://www.openfaas.com/blog/openai-streaming-responses/).
 [Kind](https://kind.sigs.k8s.io/) provides an alternative to full Kubernetes.
-Everything is hosted on a (second) Raspberry Pi (server).
+Everything is hosted on a (second) Raspberry Pi {% include ref.html ref="departure display architecture" %}.
 
 {%
-  include image.html
+  include figure.html
   src="/assets/images/posts/departures/architecture.png"
   alt="departure display architecture"
 %}
@@ -55,17 +55,17 @@ A light green background indicates normal running.
 A delayed train is indicated by an orange background, with the new departure time shown.
 
 {%
-  include image.html
+  include figure.html
   src="/assets/images/posts/departures/delayed.png"
-  alt=""
+  alt="a delayed train"
 %}
 
 A delayed train is indicated by a red background and strikethrough.
 
 {%
-  include image.html
+  include figure.html
   src="/assets/images/posts/departures/cancelled.png"
-  alt=""
+  alt="a cancelled train"
 %}
 
 Returning the clock as a part of the SSE payload ensures any connection issues are evident, although the fact that updates are only sent periodically (every 60 seconds) can result in the clock becoming out of sync.
