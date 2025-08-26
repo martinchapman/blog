@@ -6,7 +6,7 @@ tag: home-automation
 
 **What was automated?** Looking up next train times.
 
-**How?** Inspired by this [train departure display](https://github.com/chrisys/train-departure-display), a display showing the times of the next two departing trains, along with the current time, was created and placed next to the front door for easy viewing.
+**How?** Inspired by this [train departure display](https://github.com/chrisys/train-departure-display), a display showing the times of the next two departing trains from the nearest station, along with the current time, was created and placed next to the front door for easy viewing.
 <br />
 In contrast to the original display, a more minimal approach was taken: only three values are displayed {% include ref.html ref="minimal departures display" %}, and the relative size of each panel differentiates the current time (left) from the two departure times (right).
 Late running and cancelled trains are indicated by a change in colour to the back panels (orange late; red cancelled).
@@ -19,14 +19,14 @@ The front-end source is available [here](https://git.sr.ht/~martinchapman/depart
 {%
   include figure.html
   src="/assets/images/posts/building-departure-board/screen.jpg"
-  alt="minimal departures display"
+  alt="minimal departure display"
 %}
 
 ## Architecture
 
 ### Function
 
-OpenFaaS ('open source/self-hosted AWS Lambda'), provides an excellent platform for deploying pieces of automated home functionality that are too complex from a cron job, too niche for a [home assistant](https://www.home-assistant.io/) automation or [Node-RED](https://nodered.org/) flow, but not complex enough for a dedicated service.
+OpenFaaS ('open source/self-hosted AWS Lambda') provides an excellent platform for deploying pieces of automated home functionality that are too complex from a cron job, too niche for a [home assistant](https://www.home-assistant.io/) automation or [Node-RED](https://nodered.org/) flow, but not complex enough for a dedicated service.
 The departure board was such a piece of functionality, and thus an OpenFaaS function was created to support it.
 The function was built on an [updated FastAPI template](https://github.com/martinchapman/openfaas-python3-fastapi-template) to ensure suitable performance in the face of its main function: an [infinite loop polling for departure data](https://git.sr.ht/~martinchapman/pi-display/tree/main/item/departures/handler.py#L149) within each SSE connection.
 OpenFaaS provides [good support for SSE](https://www.openfaas.com/blog/openai-streaming-responses/).
@@ -39,7 +39,8 @@ Everything is hosted on a (second) Raspberry Pi {% include ref.html ref="departu
   alt="departure display architecture"
 %}
 
-Destinations that can be reached via a connecting train were determined by identifying departures from an intermediate station that occur within `duration of first leg + n` minutes of the initial departure, where `n` is an acceptable transfer time.
+The function returns departure times from customisable source (e.g. nearest to home) and destination (e.g. nearest to work) stations.
+Destinations that can be reached via a connecting train are determined by identifying departures from an intermediate station that occur within `duration of first leg + n` minutes of the initial departure, where `n` is an acceptable transfer time.
 
 Environment variables control when the API is polled (e.g. during commuting hours), to save endpoint load.
 
