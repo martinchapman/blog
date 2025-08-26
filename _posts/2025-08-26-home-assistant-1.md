@@ -43,6 +43,12 @@ Documentation of an evolving home automation setup, primarily realised through [
     - Plugs
         - [Insight Switch Smart Plug](https://www.belkin.com/support-article/?articleNum=42290)
 
+{%
+  include figure.html
+  src="/assets/images/posts/home-assistant-1/ha.png"
+  alt="home assistant snapshot 2025"
+%}
+
 ## Services
 
 - [Met Office Weather DataHub](https://datahub.metoffice.gov.uk/)
