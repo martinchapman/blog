@@ -22,8 +22,8 @@ Although the media is not constantly playing -- instead (as a guess) the content
 QuasiTV also offers an API that can be used to automatically create channels and specify the content.
 A scheduled [OpenFaaS](https://www.openfaas.com/) function was created to periodically create/update the following channels:
 
-1. [Premier](https://git.sr.ht/~martinchapman/plex-functions/tree/main/item/quasitv/handler.py#L15) (Film): a channel showing unwatched films. 
-While starting an unwatched film anywhere but at the start might seem counterinuitive, this is a homage to [Sky's Premiere Film Channel](https://www.skymedia.co.uk/channels/sky-cinema-premiere/).
+1. [Premiere](https://git.sr.ht/~martinchapman/plex-functions/tree/main/item/quasitv/handler.py#L15) (Film): a channel showing unwatched films. 
+While starting an unwatched film anywhere but at the start might seem counterintuitive, this is a homage to [Sky's Premiere Film Channel](https://www.skymedia.co.uk/channels/sky-cinema-premiere/).
 New films are added on each update.
 
 {:start="2"}
