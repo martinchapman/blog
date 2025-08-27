@@ -45,7 +45,7 @@ Trakt has several other useful features:
 
 # Rationale
 
-[steppingthroughfilm](https://www.instagram.com/steppingthroughfilm) captures well the rationale for doing this (albeit in physical form):
+[steppingthroughfilm](https://www.instagram.com/steppingthroughfilm) captures well the rationale for keeping a film diary (albeit in physical form):
 <br />
 <br />
 "For the past 16 years I've written down every film I watch in [journals]... Each film is like a memory so it's lovely flipping through the pages."
