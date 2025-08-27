@@ -1,6 +1,6 @@
 <!-- [html-validate-disable-next attribute-allowed-values] -->
 <!-- [html-validate-disable-next valid-id] -->
 <figure id="{{ include.alt | downcase | replace: ' ', '-' | escape }}" class="image">
-  <img src="{{ include.src }}" alt="{{ include.alt | escape }}" />
+  <img class="border" src="{{ include.src }}" alt="{{ include.alt | escape }}" />
   <figcaption>{{ include.alt }}</figcaption>
 </figure>
