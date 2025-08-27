@@ -2,8 +2,6 @@
 layout: landing
 title: about
 ---
-<br>
-<br>
 Posts are designed to be [_postcards to the future_](https://vukutu.com/blog/2010/07/postcards-to-the-future/'),
 documenting, at the time, activities within a number of different [areas](/tags).
 <br>
