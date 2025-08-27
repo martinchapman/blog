@@ -37,6 +37,12 @@ Trakt has several other useful features:
 
 * Storing lists, including, in my case, [favourite films each year since 1975](https://trakt.tv/users/martinchapman/lists/years?sort=rank,asc).
 
+{%
+  include figure.html
+  src="/assets/images/posts/film-diary/years.png"
+  alt="trakt years list"
+%}
+
 * Presenting [general film recommendations](https://trakt.tv/users/martinchapman/favorites?sort=rank,asc).
 
 * Listing [current films in one's library](https://trakt.tv/users/martinchapman/library) as a backup, also managed by [OpenFaaS](https://git.sr.ht/~martinchapman/plex-functions/tree/main/item/collection/handler.py).
