@@ -2,6 +2,8 @@
 layout: default
 title: blog
 ---
+**martin chapman**. views my own.
+
 <ul class='list-group list-group-light'>
   {% for post in site.posts %}
     <li class='list-group-item d-flex justify-content-between align-items-center'>
