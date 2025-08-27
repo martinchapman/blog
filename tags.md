@@ -2,13 +2,11 @@
 layout: default
 title: tags
 ---
-{% for tag in site.tags %}
-  <h3>{{ tag[0] }}</h3>
-  <ul>
-    {% for post in tag[1] %}
-      <li>
-        <a href='{{ post.url }}'>{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<ul class='list-group list-group-light'>
+  {% for tag in site.tags %}
+    <li class='list-group-item d-flex justify-content-between align-items-center'>
+      <a href='{{ '/tags/' | append: tag[0] | relative_url }}'>{{ tag[0] }}</a>
+      <span class='badge badge-info rounded-pill'>{{ tag[1].size }}</span>
+    </li>
+  {% endfor %}
+</ul>
