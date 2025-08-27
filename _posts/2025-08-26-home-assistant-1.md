@@ -46,7 +46,7 @@ Documentation of an evolving home automation setup, primarily realised through [
 {%
   include figure.html
   src="/assets/images/posts/home-assistant-1/ha.png"
-  alt="home assistant snapshot 2025"
+  alt="various devices and services shown via the home assistant dashboard"
 %}
 
 ## Services
