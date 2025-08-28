@@ -65,3 +65,19 @@ figcaption {
 footer {
   text-align: right;
 }
+
+.chapman {
+  background-color: #909cc2;
+}
+
+.chapman a {
+  color: #fff;
+}
+
+.jar {
+  background-color: #ff1744;
+}
+
+.jar a {
+  color: #fff;
+}
