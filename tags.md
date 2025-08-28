@@ -1,5 +1,5 @@
 ---
-layout: landing
+layout: default
 title: tags
 ---
 <ul class='list-group list-group-light'>

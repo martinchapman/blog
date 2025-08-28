@@ -1,5 +1,5 @@
 ---
-layout: landing
+layout: default
 title: about
 ---
 Posts are designed to be [_postcards to the future_](https://vukutu.com/blog/2010/07/postcards-to-the-future/'),

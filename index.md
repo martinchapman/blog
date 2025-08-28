@@ -1,5 +1,5 @@
 ---
-layout: landing
+layout: default
 title: home
 ---
 <ul class='list-group list-group-light'>
