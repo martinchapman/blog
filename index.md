@@ -1,6 +1,6 @@
 ---
 layout: default
-title: home
+title: blog
 ---
 <ul class='list-group list-group-light'>
   {% for post in site.posts %}
