@@ -17,8 +17,10 @@
     <div class="container my-4">
       <div class="row mb-4">
         <div class="col-md-6">
-          {% if page.date %}
+          {% if page.title != "blog" %}
           <a href="/"><span class="badge badge-secondary">blog</span></a>
+          {% endif %}
+          {% if page.date %}
           /
           <span class="badge badge-secondary">{{ page.date | date: '%-d %B %Y' }}</span>
           {% endif %}
