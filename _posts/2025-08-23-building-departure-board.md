@@ -8,7 +8,7 @@ tag: home-automation
 
 **How?** Inspired by this [train departure display](https://github.com/chrisys/train-departure-display), a display showing the times of the next two departing trains from the nearest station, along with the current time, was created and placed next to the front door for easy viewing.
 <br />
-In contrast to the original display, a more minimal approach was taken: only three values are displayed {% include ref.html ref="minimal departures display" %}, and the relative size of each panel differentiates the current time (left) from the two departure times (right).
+In contrast to the original display, a more minimal approach was taken: only three values are displayed {% include ref.html ref="minimal departure display" %}, and the relative size of each panel differentiates the current time (left) from the two departure times (right).
 Late running and cancelled trains are indicated by a change in colour to the back panels (orange late; red cancelled).
 Font strikethrough emphasises cancellations.
 <br />
