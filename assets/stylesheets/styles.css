@@ -62,6 +62,10 @@ figcaption {
   text-align: center;
 }
 
+.footnotes::before {
+  content: 'Footnotes:';
+}
+
 footer {
   text-align: right;
 }
