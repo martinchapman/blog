@@ -1,1 +1,1 @@
-(<a href="#{{ include.ref | downcase | replace: ' ', '-' | escape }}">pictured</a>)
+{% unless include.text %}({% endunless %}<a href="#{{ include.ref | downcase | replace: ' ', '-' | escape }}">{{ include.text | default: "pictured" }}</a>{% unless !include.text %}){% endunless %}
