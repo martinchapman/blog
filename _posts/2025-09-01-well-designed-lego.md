@@ -4,14 +4,12 @@ title: five features in a well-designed lego set
 tag: lego
 ---
 
-The [Triwizard Tournament: The Black Lake (76420)](https://brickset.com/sets/76420-1/Triwizard-Tournament-The-Black-Lake) (Harry Potter theme) represents Lego models at their best, in my opinion, because of the following five features:
+The [Triwizard Tournament: The Black Lake (76420)](https://brickset.com/sets/76420-1/Triwizard-Tournament-The-Black-Lake) (Harry Potter theme) contains five features that typify a well-designed Lego set:
 
 1\. *Miniature world*. 
-The set represents a miniature world.
-This creates a level of immersion[^1]. 
-Other types of sets, such as [sculptures](https://brickset.com/sets/tag-Sculptures), do not offer the same level of immersion.
+The set represents a miniature world, creating a level of immersion not found in other types of sets (e.g. [sculptures](https://brickset.com/sets/tag-Sculptures))[^1].
 
-[^1]: immersive miniature worlds can also be found in [other models](https://www.miniatur-wunderland.de/) and [forms of art](https://www.instagram.com/p/B_WlRJBH3Fl).
+[^1]: immersive miniature worlds can also be found in [other types of models](https://www.miniatur-wunderland.de/) and [forms of art](https://www.instagram.com/p/B_WlRJBH3Fl).
 
 <!-- https://www.nicepng.com/maxp/u2q8i1r5o0o0a9o0/ -->
 {%
@@ -21,7 +19,7 @@ Other types of sets, such as [sculptures](https://brickset.com/sets/tag-Sculptur
 %}
 
 2\. *Simplicity*.
-This set is fairly simple (349 pieces), yet the bricks are used efficiently to communicate a lot about the environment being modelled.
+A relatively small number of pieces (349) are used efficiently to communicate a lot about the environment being modelled.
 The floating effect, for example, is simple but effective.
 
 {%
