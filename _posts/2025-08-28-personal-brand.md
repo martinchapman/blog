@@ -22,7 +22,7 @@ Early efforts at personal branding via a logo (and often associated homepage), r
   alt="logos over the years"
 %}
 
-Efforts of note include _Monkey! Tiger! Llama??_ {% include ref.html ref="'Monkey! Tiger! Llama??'" %}, an esoteric brand name designed to emphasise the uniqueness of outputs (the appearance of a llama does not fit the sequence) but was ultimately too conceptually convoluted.
+Efforts of note include _Monkey! Tiger! Llama??_ {% include ref.html ref="'Monkey! Tiger! Llama??'" %}, an esoteric brand name designed to emphasise the uniqueness of outputs (the appearance of a llama does not fit the sequence), but was ultimately too conceptually convoluted.
 It was likely inspired by [similar brands](https://web.archive.org/web/20161004200032/http://3sheep.co.uk/) at the time.
 
 {%
@@ -47,7 +47,7 @@ Regardless, a homage to this site remains in the footer of my [design work archi
 
 A more recent logo-based branding effort sought to play on the fact that the two constituent syllables in 'Chapman' are both synonyms for male ('[chap](https://dictionary.cambridge.org/dictionary/english/chap)' and 'man').
 Accordingly, a logo was produced showing two simplified male faces.
-This logo formed the basis of the first homepage departing from the sole focus on web design {% include ref.html ref="'martinchapman.co.uk'" %}.
+This logo formed the basis of the first homepage that departs from the sole focus on web design {% include ref.html ref="'martinchapman.co.uk'" %}.
 
 {%
   include figure.html
@@ -82,8 +82,8 @@ As in this case, I typically use the excellent site [coolors.co](https://coolors
   <figcaption>kclhi.org palette</figcaption>
 </figure>
 
-In general the flexibility to 'own' certain colours, due to the wide range available, and the power of these colours to create consistency as part of a brand, is really interesting.
+In general, the flexibility to 'own' certain colours, due to the wide range available, and the power of these colours to create consistency as part of a brand, is really interesting.
 
 ## Fonts
 
-The use of fonts as part of a self brand is less pronounced, however, for example, the font [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) is used consistently across my work-based pages.
+The use of fonts as part of a self-brand is less pronounced, however, for example, the font [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) is used consistently across my work-based pages.
