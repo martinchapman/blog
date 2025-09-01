@@ -67,7 +67,7 @@ All Zigbee devices are connected via a [SONOFF Zigbee 3.0 USB Dongle Plus](https
 Home assistant itself is also hosted on the Pi.
 <br />
 Although directly connecting devices via Zigbee is preferable to using vendor-specific hubs, one does lose the functionality offered by these hubs, such as the scenes provided by the Hue Bridge.
-In the case of Hue, scenes ares replicated using the values [here](https://www.reddit.com/r/Hue/comments/i97xw9/comment/g1msq1p/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button). 
+In the case of Hue, scenes are replicated using the values [here](https://www.reddit.com/r/Hue/comments/i97xw9/comment/g1msq1p/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button). 
 Scenes with more colours than there are lights available are captured as scripts that randomise colours across the available lights.
 
 {%
@@ -86,7 +86,7 @@ Automations that leverage these devices, services and links:
 | --- | --- |
 | Number of mobile devices on network > 0 (someone arrives home) | Turn on lights if after sunset |
 | Mobile device joins/leaves network (an individual arrives/leaves home) | Forward this information via Telegram |
-| Temperature sensor above 27 degrees | Alert high temperature, and suggestion action based on external temperature (windows open vs. AC on) |
+| Temperature sensor above 27 degrees | Alert high temperature, and suggest action based on external temperature (windows open vs. AC on) |
 | Number of mobile devices on network = 0 (everyone leaves home) | Turn off relevant lights and plugs, report on Telegram |
 | Mobile device plugged in before bed | Lights off/dimmed/delayed off, as appropriate |
 | Image or video received from camera | Forward via Telegram |
