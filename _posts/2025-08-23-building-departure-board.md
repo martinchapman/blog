@@ -26,7 +26,7 @@ The front-end source is available [here](https://git.sr.ht/~martinchapman/depart
 
 ### Function
 
-OpenFaaS ('open source/self-hosted AWS Lambda') provides an excellent platform for deploying pieces of automated home functionality that are too complex from a cron job, too niche for a [home assistant](https://www.home-assistant.io/) automation or [Node-RED](https://nodered.org/) flow, but not complex enough for a dedicated service.
+OpenFaaS ('open source/self-hosted AWS Lambda') provides an excellent platform for deploying pieces of automated home functionality that are too complex for a cron job, too niche for a [home assistant](https://www.home-assistant.io/) automation or [Node-RED](https://nodered.org/) flow, but not complex enough for a dedicated service.
 The departure board was such a piece of functionality, and thus an OpenFaaS function was created to support it.
 The function was built on an [updated FastAPI template](https://github.com/martinchapman/openfaas-python3-fastapi-template) to ensure suitable performance in the face of its main function: an [infinite loop polling for departure data](https://git.sr.ht/~martinchapman/pi-display/tree/main/item/departures/handler.py#L149) within each SSE connection.
 OpenFaaS provides [good support for SSE](https://www.openfaas.com/blog/openai-streaming-responses/).
@@ -49,7 +49,7 @@ Environment variables control when the API is polled (e.g. during commuting hour
 ### Front-end
 
 The front-end is served as a static site from an existing [NGINX](https://nginx.org/) instance on the server.
-Its primary function is to initiate the SSE connection on load, and update the UI depending on the response.
+Its primary function is to initiate the SSE connection on load and update the UI depending on the response.
 
 A light green background indicates normal running.
 
@@ -72,7 +72,7 @@ A delayed train is indicated by a red background and strikethrough.
 Returning the clock as a part of the SSE payload ensures any connection issues are evident, although the fact that updates are only sent periodically (every 60 seconds) can result in the clock becoming out of sync.
 
 Linting is provided by [html-validate](https://www.npmjs.com/package/html-validate) and [stylelint](https://stylelint.io/), formatting by [prettier](https://prettier.io/), and testing by [jest](https://jestjs.io/) (linted by [es-lint](https://eslint.org/)).
-[Jinja](https://jinja.palletsprojects.com/en/stable/) templating is preferring to direct HTML to avoid hardcoding variables.
+[Jinja](https://jinja.palletsprojects.com/en/stable/) templating is preferred to direct HTML to avoid hardcoding variables.
 
 ### Hardware
 
