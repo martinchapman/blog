@@ -19,9 +19,7 @@
         <div class="col-md-6">
           {% if page.title != "blog" %}
           <a href="/"><span class="badge badge-secondary">blog</span></a>
-          {% endif %}
-          {% if page.date %}
-          /
+          {% endif %} {% if page.date %} /
           <span class="badge badge-secondary">{{ page.date | date: '%-d %B %Y' }}</span>
           {% endif %}
           <h1>{{ page.title | downcase }}</h1>
@@ -53,6 +51,19 @@
         </div>
       </footer>
     </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q76JEVH4F0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied'
+      });
+      gtag('config', 'G-Q76JEVH4F0');
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.umd.min.js"></script>
     <script>
       function setColourScheme() {
