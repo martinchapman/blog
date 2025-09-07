@@ -71,9 +71,9 @@ The colour <span class="chapman p-2"><a href="https://coolors.co/909cc2">#909CC2
 
 Similarly, <span class="jar p-2"><a href="https://coolors.co/ff1744">#FF1744</a></span> (red (munsell)) is used in my design work archive.
 
-Whole pallets have also been used as branding, such as for [kclhi.org](https://kclhi.github.io/) {% include ref.html ref="kclhi.org palette" %}.
-As in this case, I typically use the excellent site [coolors.co](https://coolors.co/u/martinchapman) to keep track of pallets used in branding efforts, and aesthetically pleasing pallets I observe more generally and want to record for future use (e.g. using the [image picker](https://coolors.co/image-picker)).
-Some pallets are also an opportunity for a [pop culuture nod](https://coolors.co/user/palettes/68bd9e724d1f36000b61f2ce).
+Whole palettes have also been used as branding, such as for [kclhi.org](https://kclhi.github.io/) {% include ref.html ref="kclhi.org palette" %}.
+As in this case, I typically use the excellent site [coolors.co](https://coolors.co/u/martinchapman) to keep track of palettes used in branding efforts, and aesthetically pleasing palettes I observe more generally and want to record for future use (e.g. using the [image picker](https://coolors.co/image-picker)).
+Some palettes are also an opportunity for a [pop culuture nod](https://coolors.co/user/palettes/68bd9e724d1f36000b61f2ce).
 
 <figure id="kclhi.org-palette" class="image">
   <script src="https://coolors.co/palette-widget/widget.js"></script>
