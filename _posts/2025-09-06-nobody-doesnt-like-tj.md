@@ -11,4 +11,4 @@ tag: reflection
   src="https://www.youtube.com/embed/KQg47epyuI0?si=U7sSTPxrBoorLF72"
 %}
 
--- Gretchen Grundler ('Recess', 2000)
+-- Gretchen Grundler ('[Recess](https://en.wikipedia.org/wiki/Recess_(TV_series))', 2000)
