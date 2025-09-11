@@ -9,7 +9,7 @@ tag: home-automation
 **How?** Traditional television removes [streaming choice paralysis](https://medium.com/@vijetakarani6/how-choice-paralysis-is-costing-netflix-2-8b-annually-and-the-simple-ux-changes-that-could-fix-it-262c3f28bf15).
 However, traditional channels do not offer the range of content that, for example, streaming providers do.
 [QuasiTV](https://www.quasitv.app/) solves this problem by presenting a media library in a TV schedule format {% include ref.html ref="quasitv main ui" %}.
-Although the media is not constantly playing -- instead (as a guess) the content is started at a time from a pre-determined schedule when a channel is selected -- this creates an effective illusion of live television.
+Although the media is not constantly playing---instead (as a guess) the content is started at a time from a pre-determined schedule when a channel is selected---this creates an effective illusion of live television.
 
 {%
   include figure.html

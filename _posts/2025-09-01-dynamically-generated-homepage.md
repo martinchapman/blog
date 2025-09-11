@@ -26,7 +26,7 @@ The first pass of creating such a site resulted in what could be loosely describ
 <br>
 <br>
 These services were realised as dockerised [Express (Node.js)](https://expressjs.com/) servers, running on a single self-hosted server.
-A range of content platforms -- including GitHub, as in this example -- were polled periodically by the social proxy (typically manually initiated), using their standard APIs.
+A range of content platforms---including GitHub, as in this example---were polled periodically by the social proxy (typically manually initiated), using their standard APIs.
 Content, such as a list of repos, was then stored locally (cached) in a database.
 If APIs weren't available (e.g. LinkedIn), content was mocked in the database.
 Thus, everything to the right of the dashed line happened asynchronously, in an effort to improve response time and limit API endpoint load.
@@ -53,7 +53,7 @@ This time, however, the output is committed to a GitHub repository to be served 
 Thus, much more of the process happens asynchronously, on GitHub.
 <br>
 <br>
-Although the static site generation process is simpler, one does lose some flexibility, such as custom paths that -- via a full web server -- perform arbitrary lookups against the aggregated platform data, such as one for publications that contain certain words (`https://martinchapman.co.uk/publications/pheno/`).
+Although the static site generation process is simpler, one does lose some flexibility, such as custom paths that---via a full web server---perform arbitrary lookups against the aggregated platform data, such as one for publications that contain certain words (`https://martinchapman.co.uk/publications/pheno/`).
 This can be replicated by adding another output step to the GitHub workflow, but it is not truly dynamic.
 {%
   include figure.html
@@ -84,7 +84,7 @@ An overview of what is aggregated and from where is shown below.
 ## Critique
 
 As with most automation endeavours, there is a risk that the effort taken to make something happen automatically outweighs the effort that would be spent completing the same task manually.
-As of now, this may be true of this approach, but over time -- with, among other things, a reduction in duplication errors -- it is likely that the effort spent will start to pay off.
+As of now, this may be true of this approach, but over time---with, among other things, a reduction in duplication errors---it is likely that the effort spent will start to pay off.
 Automated (and potentially over-engineered) solutions are also often [more entertaining](https://www.youtube.com/watch?v=H0XYANRosVo). 
 
 As what is aggregated from these various platforms is text-based, there is the argument that the content of the site is too text-heavy.
