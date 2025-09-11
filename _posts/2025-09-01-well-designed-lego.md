@@ -60,10 +60,10 @@ This includes the famed [Lego Aquanauts](https://brickset.com/sets/theme-Aquazon
 
 <hr />
 
-The images {% include ref.html ref="minifigures" text="pictured above" %} were captured by placing the model in an acrylic display case (24 x 14 x 12 cm), the height of which almost perfectly aligns with the top of the underwater section {% include ref.html ref="full set and case" %}.
-This allows for the boat accessory to be balanced at an appropriate height, and film positioned on the sides of the case to create the illusion of water.
+It transpires that the model fits into an acrylic display case (24 x 14 x 12 cm) such that only the above water section is exposed when the top is removed {% include ref.html ref="full set and case" %}.
+This allows for the boat accessory to be balanced at an appropriate height, and film positioned on the sides of the case to create the illusion of water for the underwater component.
 <br>
-This adds a practical element prior to photographing and editing (using [GIMP](https://www.gimp.org/)), and creates a reasonable real-world effect short of filling the case with [actual water](https://vm.tiktok.com/ZNdVDDJ7X/).
+This adds a practical element prior to {% include ref.html ref="minifigures" text="photographing and editing" %} (using [GIMP](https://www.gimp.org/)), and creates a reasonable real-world effect short of filling the case with [actual water](https://vm.tiktok.com/ZNdVDDJ7X/).
 
 {%
   include figure.html
