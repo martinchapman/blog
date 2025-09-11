@@ -9,7 +9,7 @@ At the same time, not doing this may result in a fragmented profile.
 <br>
 <br>
 In an attempt to solve this problem, the most recent [iteration](/2025/08/28/personal-brand.html#chap-man) of [martinchapman.co.uk](https://martinchapman.co.uk) (~2018) was designed to automatically aggregate content from multiple platforms, providing a single, comprehensive, dynamically generated biographic source {% include ref.html ref="martinchapman.co.uk" %}.
-This also eliminates the need for manual updates.
+This also eliminates the need for manual updates, and ensures that all biographical content is centred around outputs.
 <br>
 <br>
 The process of creating this site is documented below.
