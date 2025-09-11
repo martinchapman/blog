@@ -87,4 +87,7 @@ In general, the flexibility to 'own' certain colours, due to the wide range avai
 
 ## Fonts
 
-The use of fonts as part of a self-brand is less pronounced, however, for example, the font [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) is used consistently across my work-based pages.
+The use of fonts as part of a self-brand is less pronounced, but the font [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) is used consistently across my work-based pages, for example.
+
+Text in general, however, can be used effectively as part of a brand.
+I have, for example, consistently used a double hyphen (broadly an em dash substitute) in the salutation component of an email ('_Hi \<recipient\> \-\-_'), rather than the more standard comma.
