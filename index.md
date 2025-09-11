@@ -5,14 +5,14 @@ title: blog
 Views are my own.
 <br>
 <br>
-Work-based content is available on the [root domain](https://martinchapman.co.uk) and on social media sites:
-[Bluesky](https://bsky.app/profile/martinchapman.bsky.social), [Mastodon](https://mastodon.social/@martinchapman) and
-[Twitter (X)](https://x.com/martin_chap_man).
-<br>
-<br>
-_Posts are designed to be public, and thus somewhat long-lived, [postcards to the
+Posts are designed to be public, and thus somewhat long-lived, [postcards to the
 future](https://vukutu.com/blog/2010/07/postcards-to-the-future/') (self-addressed), documenting activities within a
-number of different [areas](/tags)._
+number of different [areas](/tags).
+<br>
+<br>
+_Work-based content is available on the [root domain](https://martinchapman.co.uk), [Medium](https://medium.com/@MartinChapman) and on social media sites:
+[Bluesky](https://bsky.app/profile/martinchapman.bsky.social), [Mastodon](https://mastodon.social/@martinchapman) and
+[Twitter (X)](https://x.com/martin_chap_man)._
 <br>
 <br>
 <img class='thumbnail' src='/assets/images/about.png' alt='martin chapman'>
