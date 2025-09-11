@@ -21,6 +21,10 @@ img {
   height: auto;
 }
 
+.thumbnail {
+  width: 50% !important;
+}
+
 iframe {
   width: 100% !important;
   max-width: 100%;
