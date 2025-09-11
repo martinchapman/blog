@@ -2,12 +2,8 @@
 layout: default
 title: blog
 ---
-Views are my own.
-<br>
-<br>
-Posts are designed to be public, and thus somewhat long-lived, [postcards to the
-future](https://vukutu.com/blog/2010/07/postcards-to-the-future/') (self-addressed), documenting activities within a
-number of different [areas](/tags).
+[Postcards to the
+future](https://vukutu.com/blog/2010/07/postcards-to-the-future/'). Views are my own.
 <br>
 <br>
 _Work-based content is available on the [root domain](https://martinchapman.co.uk), [Medium](https://medium.com/@MartinChapman) and on social media sites:
