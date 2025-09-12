@@ -36,7 +36,7 @@ Instead, come up with an overview of the implementation, and then ask for help w
 4. Ask follow-up questions if you don't understand any of the output.
 
 It is perhaps also worth acknowledging the other ways generative AI might be used to support the _how_ of programming: thus far, it has effectively been equated with a search engine (over a knowledge base), and in many ways [this is correct](https://tratt.net/laurie/blog/2025/the_llm_for_software_yoyo.html) as large language models (LLMs) do offer a form of _semantic search_ (while acknowledging issues with accuracy).
-They can though, of course, perform other (more sophisticated) functions, such as acting as a sounding board for solutions that are already known to be correct.
+They can though, of course, perform other (more sophisticated) functions, such as acting as a sounding board for solutions that are already known to be correct, to again intentionally anthropomorphise.
  
 [^1]: Message boards and generative AI are framed as knowledge bases with caution, as there is obviously the chance that both (especially the latter) will provide incorrect information.
 
