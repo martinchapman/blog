@@ -24,7 +24,7 @@ The site _Let Me Google That_ {% include ref.html ref="'let me google that for y
 
 In the case of generative AI, there would seem to be several steps that can be taken to ensure that it is only ever the _how_ that is asked, and never the _what_.
 These can also be reframed as an assessment of whether generative AI is being used correctly.
-Suggestions for general good AI practice are added to these steps for good measure, and in each case the model is intentionally anthropomorphised for clarity:
+Suggestions for general good AI practice are added to these steps for good measure, and in each case the model is intentionally anthropomorphised for clarity[^2]:
 
 1. Don't ask extremely high-level questions (this leads to bad code). 
 Instead, come up with an overview of the implementation, and then ask for help with very specific parts of that implementation.
@@ -39,3 +39,5 @@ It is perhaps also worth acknowledging the other ways generative AI might be use
 They can though, of course, perform other (more sophisticated) functions, such as acting as a sounding board for solutions that are already known to be correct.
  
 [^1]: Message boards and generative AI are framed as knowledge bases with caution, as there is obviously the chance that both (especially the latter) will provide incorrect information.
+
+[^2]: For a good overview of how language models actually work, see the excellent explanation [here](https://youtu.be/XZJc1p6RE78?si=iJflfj0UixpmRSlI&t=155) (contained within an equally interesting wider topic).
