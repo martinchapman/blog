@@ -34,7 +34,7 @@ Node-RED, a flow-based automation platform {% include ref.html ref="'Node-RED'" 
 
 This platform houses 'Organisers', such as Dropbox file organisation automations (e.g. distributing documents into date-based folders) and cleanup jobs for stale data; 'Parsers' such as receipt parsing and budget notifications, and OCR flows for scanned documents; and 'Media', exposed endpoints for media platforms (less automation-focused). As we are (arguably incorrectly) expanding the notion of home automation here to include support for any task that would be undertaken at home, it is worth flagging that Node-RED can, of course, conduct more traditional home automation tasks.
 
-**Signs to move to the next platform**: When, as with Cron, deploying an automation would require a small number of nodes to effectively be proxies for larger, external programs, _and/or_ require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain [^1].
+**Signs to move to the next platform**: When, as with Cron, deploying an automation would require a small number of nodes to effectively be proxies for larger, external programs, _and/or_ require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain[^1].
 
 ## 3. Home Assistant
 
@@ -56,4 +56,4 @@ Sadly, but understandably, OpenFaaS has mostly transformed into a commercial pro
 
 The last resort for deploying an automation is the development of a bespoke web server application to house logic. Platforms/frameworks like [FastAPI](https://fastapi.tiangolo.com/) (Python) and [Fastify](https://fastify.dev/) (Javascript/Typescript) are, at the time of writing, two such leading frameworks, and have been employed in the current setup to provide stateful utility services such as a credentials wallet.
 
-[^1] This rule is broken slightly by leveraging relatively complex, home-grown wrapper libraries around technologies like RClone from within Node-RED, however these still support fairly simple tasks, and are used across different platforms.
+[^1]: This rule is broken slightly by leveraging relatively complex, home-grown wrapper libraries around technologies like RClone from within Node-RED, however these still support fairly simple tasks, and are used across different platforms.
