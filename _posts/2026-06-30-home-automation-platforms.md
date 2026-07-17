@@ -20,9 +20,15 @@ Cron, the OS-based automation tool, provides the simplest automation option (whe
 0 0 * * * /usr/bin/wget https://darekkay.com/service/trakt/trakt.php?username=martinchapman -O /tmp/trakt.zip; /usr/bin/rclone sync /tmp/trakt.zip dropbox:/Apps
 ```
 
-**Signs to move to the next platform**: When deploying an automation would necessitate calling a self-authored program from within the job (bad for reproducibility).
+**Signs to move to the next platform**: When more than a one-shot job is required.
 
-## 2. Node-RED
+## 2. systemd
+
+systemd, or more specifically the daemons it manages as services, provide a increment over cron in respect of the ability to support long-running processes. For example, in the current setup local _s3_ buckets are provided by rclone's `serve` (from Dropbox) feature, the single command for which is run as a systemd unit. Although this example isn't an automation in and of itself, it can certainly support other automations (e.g. by providing storage).
+
+**Signs to move to the next platform**: When deploying an automation would necessitate calling a self-authored program from within the service (bad for reproducibility).
+
+## 3. Node-RED
 
 Node-RED, a flow-based automation platform {% include ref.html ref="'Node-RED'" %}, allows for relatively simple individual actions to be wired together and executed automatically. Although an older solution, this doesn't make it any less valid today (particularly given such [active development](https://nodered.org/blog/2026/06/09/version-5-0-released)), and it is thus the next platform in use.
 
@@ -34,15 +40,15 @@ Node-RED, a flow-based automation platform {% include ref.html ref="'Node-RED'" 
 
 This platform houses 'Organisers', such as Dropbox file organisation automations (e.g. distributing documents into date-based folders) and cleanup jobs for stale data; 'Parsers' such as receipt parsing and budget notifications, and OCR flows for scanned documents; and 'Media', exposed endpoints for media platforms (less automation-focused). As we are (arguably incorrectly) expanding the notion of home automation here to include support for any task that would be undertaken at home, it is worth flagging that Node-RED can, of course, conduct more traditional home automation tasks.
 
-**Signs to move to the next platform**: When, as with Cron, deploying an automation would require a small number of nodes to effectively be proxies for larger, external programs, _and/or_ require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain[^1].
+**Signs to move to the next platform**: When, as with systemd, deploying an automation would require a small number of nodes to effectively be proxies for larger, external programs, _and/or_ require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain[^1].
 
-## 3. Home Assistant
+## 4. Home Assistant
 
 Home Assistant would likely sit here in the hierarchy.
 
 **Signs to move to the next platform**: When deploying an automation would require a custom integration, _or_, as before, require calling external tooling as requirements go beyond Home Assistant's own automation syntax.
 
-## 4. OpenFasS
+## 5. OpenFasS
 
 It's trite to praise the simple yet powerful concept of a function, but worth emphasising especially in the context of automation where many use cases call for the input / process / output model. The [OpenFaaS](https://www.openfaas.com/) platform (self-hosted [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)) realises this model by enabling functions to be deployed as network-accessible entities that can, consequently, serve as endpoints as a part of larger automations, or be paired with a cron-like scheduler to perform self-contained actions.
 
@@ -52,8 +58,8 @@ Sadly, but understandably, OpenFaaS has mostly transformed into a commercial pro
 
 **Signs to move to the next platform**: When state is required.
 
-## 5. FastAPI / Fastify
+## 6. FastAPI / Fastify
 
 The last resort for deploying an automation is the development of a bespoke web server application to house logic. Platforms/frameworks like [FastAPI](https://fastapi.tiangolo.com/) (Python) and [Fastify](https://fastify.dev/) (Javascript/Typescript) are, at the time of writing, two such leading frameworks, and have been employed in the current setup to provide stateful utility services such as a credentials wallet.
 
-[^1]: This rule is broken slightly by leveraging relatively complex, home-grown wrapper libraries around technologies like RClone from within Node-RED, however these still support fairly simple tasks, and are used across different platforms.
+[^1]: This rule is broken slightly by leveraging relatively complex, home-grown wrapper libraries around technologies like rclone from within Node-RED, however these still support fairly simple tasks, and are used across different platforms.
