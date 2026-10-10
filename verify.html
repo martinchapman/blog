@@ -1,0 +1,52 @@
+---
+layout: default
+title: verify
+---
+
+<p><a href="https://keys.openpgp.org/vks/v1/by-fingerprint/DC96A97C0283AF8BA4BB51C1DAD7902C1932C290">key</a></p>
+<div id="files"></div>
+<template id="file">
+  <h2 class="h5 mt-4">file</h2>
+  <p><a class="live">live copy</a> / <a class="download">download</a></p>
+  <pre><code></code></pre>
+</template>
+<script>
+  const post = new URLSearchParams(location.search).get('post') ?? '';
+  const base64 = (buffer) =>
+    btoa(String.fromCharCode(...new Uint8Array(buffer)))
+      .match(/.{1,64}/g)
+      .join('\n');
+  const render = ({title, url, live = url, name, binary}) => {
+    const fragment = document.getElementById('file').content.cloneNode(true);
+    const code = fragment.querySelector('code');
+    const download = fragment.querySelector('.download');
+    fragment.querySelector('h2').textContent = title;
+    fragment.querySelector('.live').href = live;
+    download.download = name;
+    document.getElementById('files').append(fragment);
+    fetch(url).then(async (response) => {
+      if (!response.ok) return (code.textContent = `failed to load (${response.status})`);
+      const buffer = await response.arrayBuffer();
+      download.href = URL.createObjectURL(new Blob([buffer]));
+      code.textContent = binary ? base64(buffer) : new TextDecoder().decode(buffer);
+    });
+  };
+  if (/^\d{4}-\d{2}-\d{2}-[\w-]+\.md$/.test(post))
+    [
+      {title: 'source', url: `https://raw.githubusercontent.com/martinchapman/blog/main/_posts/${post}`, name: post},
+      {title: 'signature', url: `/signatures/${post}.asc`, name: `${post}.asc`},
+      {title: 'timestamp', url: `/signatures/${post}.tsr`, name: `${post}.tsr`, binary: true},
+      {
+        title: 'FreeTSA CA certificate',
+        url: '/signatures/cacert.pem',
+        live: 'https://freetsa.org/files/cacert.pem',
+        name: 'cacert.pem'
+      },
+      {
+        title: 'FreeTSA TSA certificate',
+        url: '/signatures/tsa.crt',
+        live: 'https://freetsa.org/files/tsa.crt',
+        name: 'tsa.crt'
+      }
+    ].forEach(render);
+</script>
