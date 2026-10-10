@@ -38,7 +38,7 @@
         <div class="row">
           <div class="col-md-12">
             {% if page.collection == "posts" %} {% assign post = page.path | split: '/' | last %} view post
-            <a href="/verify.html?post={{ post }}">authenticity</a> and
+            <a href="/verify.html?post={{ post }}">verification</a> and
             <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">history</a>
             {% else %}
             <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">view page history</a>
