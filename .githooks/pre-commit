@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+key=$(git config user.signingkey) || { echo 'user.signingkey is not set' >&2; exit 1; }
+directory=signatures
+
+staged_posts() {
+  git diff --cached --name-only --no-renames --diff-filter="$1" -- '_posts/*.md'
+}
+
+remove_signature() {
+  git rm --quiet --ignore-unmatch "$directory/$(basename "$1")".{asc,tsr}
+}
+
+sign() {
+  git show ":$1" | gpg --armor --detach-sign --local-user "$key" --yes --output "$2"
+}
+
+timestamp() {
+  openssl ts -query -data "$1" -sha256 -cert \
+    | curl -sSf -H 'Content-Type: application/timestamp-query' --data-binary @- https://freetsa.org/tsr -o "$2"
+  openssl ts -verify -in "$2" -data "$1" -CAfile "$directory/cacert.pem" -untrusted "$directory/tsa.crt" > /dev/null
+}
+
+sign_and_timestamp() {
+  local signature="$directory/$(basename "$1").asc"
+  local receipt="$directory/$(basename "$1").tsr"
+  sign "$1" "$signature"
+  timestamp "$signature" "$receipt"
+  git add "$signature" "$receipt"
+  echo "signed $1"
+}
+
+staged_posts D | while read -r post; do remove_signature "$post"; done
+{ [ $# -gt 0 ] && printf '%s\n' "$@" || staged_posts AM; } | while read -r post; do sign_and_timestamp "$post"; done
