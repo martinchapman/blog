@@ -10,7 +10,7 @@ title: verify
 <template id="file">
   <div>
     <h2 class="h5 mt-4">file</h2>
-    <p><a class="live">live copy</a> / <a class="download">download</a></p>
+    <p><a class="download">download</a></p>
   </div>
   <details class="image mt-4">
     <summary>preview</summary>
@@ -30,12 +30,12 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
     btoa(String.fromCharCode(...new Uint8Array(buffer)))
       .match(/.{1,64}/g)
       .join('\n');
-  const render = ({title, url, live = url, name, binary}) => {
+  const render = ({title, url, link, name, binary}) => {
     const fragment = document.getElementById('file').content.cloneNode(true);
     const code = fragment.querySelector('code');
     const download = fragment.querySelector('.download');
     fragment.querySelector('h2').textContent = title;
-    fragment.querySelector('.live').href = live;
+    if (link) download.before(Object.assign(document.createElement('a'), link), ' / ');
     download.download = name;
     document.getElementById('file').before(fragment);
     fetch(url).then(async (response) => {
@@ -52,6 +52,10 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
       {
         title: 'source',
         url: `https://raw.githubusercontent.com/martinchapman/blog/main/_posts/${post}`,
+        link: {
+          href: `https://raw.githubusercontent.com/martinchapman/blog/main/_posts/${post}`,
+          textContent: 'live copy'
+        },
         name: post
       },
       {title: 'signature', url: `/signatures/${post}.asc`, name: `${post}.asc`},
@@ -59,13 +63,13 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
       {
         title: 'FreeTSA CA certificate',
         url: '/signatures/cacert.pem',
-        live: 'https://freetsa.org/files/cacert.pem',
+        link: {href: 'https://freetsa.org/files/cacert.pem', textContent: 'FreeTSA copy'},
         name: 'cacert.pem'
       },
       {
         title: 'FreeTSA TSA certificate',
         url: '/signatures/tsa.crt',
-        live: 'https://freetsa.org/files/tsa.crt',
+        link: {href: 'https://freetsa.org/files/tsa.crt', textContent: 'FreeTSA copy'},
         name: 'tsa.crt'
       }
     ].forEach(render);
