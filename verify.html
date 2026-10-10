@@ -26,6 +26,9 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
 </div>
 <script>
   const post = new URLSearchParams(location.search).get('post') ?? '';
+  const titles = {
+    {% for entry in site.posts %}{{ entry.path | split: '/' | last | jsonify }}: {{ entry.title | downcase | jsonify }},{% endfor %}
+  };
   const base64 = (buffer) =>
     btoa(String.fromCharCode(...new Uint8Array(buffer)))
       .match(/.{1,64}/g)
@@ -46,6 +49,9 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
     });
   };
   if (/^\d{4}-\d{2}-\d{2}-[\w-]+\.md$/.test(post)) {
+    const title = `verify '${titles[post] ?? post}'`;
+    document.title = document.title.replace('verify', title);
+    document.querySelector('h1').textContent = title;
     const usage = document.getElementById('usage');
     usage.textContent = usage.textContent.replaceAll('post.md', post);
     [
