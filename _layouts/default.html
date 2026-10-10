@@ -37,16 +37,14 @@
       <footer>
         <div class="row">
           <div class="col-md-12">
+            {% if page.collection == "posts" %} {% assign post = page.path | split: '/' | last %} view post
+            <a href="/verify.html?post={{ post }}">authenticity</a> and
+            <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">history</a>
+            {% else %}
             <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">view page history</a>
+            {% endif %}
           </div>
         </div>
-        {% if page.collection == "posts" %} {% assign post = page.path | split: '/' | last %}
-        <div class="row">
-          <div class="col-md-12">
-            <a href="/verify.html?post={{ post }}">verify that this post was written by me at the time stated</a>
-          </div>
-        </div>
-        {% endif %}
         <div class="row">
           <div class="col-md-12">
             built with <a href="https://jekyllrb.com/">jekyl</a> and <a href="https://mdbootstrap.com/">mdbootstrap</a>
