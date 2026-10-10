@@ -55,6 +55,7 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
     const usage = document.getElementById('usage');
     usage.textContent = usage.textContent.replaceAll('post.md', post);
     [
+      {title: 'signature', url: `/signatures/${post}.asc`, name: `${post}.asc`},
       {
         title: 'source',
         url: `https://raw.githubusercontent.com/martinchapman/blog/main/_posts/${post}`,
@@ -64,7 +65,6 @@ openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
         },
         name: post
       },
-      {title: 'signature', url: `/signatures/${post}.asc`, name: `${post}.asc`},
       {title: 'timestamp', url: `/signatures/${post}.tsr`, name: `${post}.tsr`, binary: true},
       {
         title: 'FreeTSA CA certificate',
