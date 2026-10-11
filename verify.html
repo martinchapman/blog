@@ -4,21 +4,21 @@ title: verify
 ---
 
 <div>
-  <h2 class="h5 mt-4">key</h2>
+  <h2 class="h5">key</h2>
   <p><a href="https://keys.openpgp.org/vks/v1/by-fingerprint/DC96A97C0283AF8BA4BB51C1DAD7902C1932C290">download</a></p>
 </div>
 <template id="file">
   <div>
-    <h2 class="h5 mt-4">file</h2>
+    <h2 class="h5">file</h2>
     <p><a class="download">download</a></p>
   </div>
-  <details class="image mt-4">
+  <details class="image">
     <summary>preview</summary>
     <pre><code></code></pre>
   </details>
 </template>
 <div>
-  <h2 class="h5 mt-4">usage</h2>
+  <h2 class="h5">usage</h2>
   <pre><code id="usage">gpg --import DC96A97C0283AF8BA4BB51C1DAD7902C1932C290.asc
 gpg --verify post.md.asc post.md
 openssl ts -verify -in post.md.tsr -data post.md.asc -CAfile cacert.pem -untrusted tsa.crt
