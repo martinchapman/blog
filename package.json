@@ -16,5 +16,9 @@
     "prettier": "bun run format && bun run lint",
     "check": "tsgo && biome lint assets/scripts/verify.ts",
     "build": "bun build assets/scripts/verify.ts --outfile assets/scripts/verify.js --minify"
+  },
+  "dependencies": {
+    "openpgp": "6.3.2",
+    "pkijs": "3.4.1"
   }
 }
