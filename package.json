@@ -1,7 +1,9 @@
 {
   "type": "module",
   "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
     "@shopify/prettier-plugin-liquid": "^1.9.4",
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2",
     "html-validate": "^10.0.0",
     "prettier": "^3.6.2",
     "stylelint": "^16.23.1",
@@ -11,6 +13,12 @@
     "test": "jest",
     "format": "prettier --write .",
     "lint": "html-validate . && stylelint assets/stylesheets/*.css",
-    "prettier": "npm run format && npm run lint"
+    "prettier": "bun run format && bun run lint",
+    "check": "tsgo && biome lint assets/scripts/verify.ts",
+    "build": "bun build assets/scripts/verify.ts --outfile assets/scripts/verify.js --minify"
+  },
+  "dependencies": {
+    "openpgp": "6.3.2",
+    "pkijs": "3.4.1"
   }
 }
