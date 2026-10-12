@@ -16,6 +16,10 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run check
+      - run: bun run build
       - uses: actions/jekyll-build-pages@v1
       - uses: actions/upload-pages-artifact@v5
 
