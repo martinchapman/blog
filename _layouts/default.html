@@ -47,21 +47,30 @@
       <footer>
         <div class="row">
           <div class="col-md-12">
-            {% if page.collection == "posts" %} {% assign post = page.path | split: '/' | last %}
-            <a href="/verify.html?post={{ post }}">verify post</a> and
-            <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">view history</a>
-            {% else %}
-            <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">view page history</a>
+            {% if page.title == "blog" %}
+            <div class="mb-2">
+              <em
+                >Work-based content is available on the <a href="https://martinchapman.co.uk">root domain</a>,
+                <a href="https://medium.com/@MartinChapman">Medium</a> and on social media sites:
+                <a href="https://bsky.app/profile/martinchapman.bsky.social">Bluesky</a>,
+                <a href="https://mastodon.social/@martinchapman">Mastodon</a> and
+                <a href="https://x.com/martin_chap_man">Twitter (X)</a>.</em
+              >
+            </div>
             {% endif %}
+            <div>
+              {% if page.collection == "posts" %} {% assign post = page.path | split: '/' | last %}
+              <a href="/verify.html?post={{ post }}">verify post</a> and
+              <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">view history</a>
+              {% else %}
+              <a href="https://github.com/martinchapman/blog/commits/main/{{ page.path }}">view page history</a>
+              {% endif %}
+            </div>
+            <div>
+              built with <a href="https://jekyllrb.com/">jekyl</a> and <a href="https://mdbootstrap.com/">mdbootstrap</a>
+            </div>
+            <div>&#169; Martin Chapman</div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            built with <a href="https://jekyllrb.com/">jekyl</a> and <a href="https://mdbootstrap.com/">mdbootstrap</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">&#169; Martin Chapman</div>
         </div>
       </footer>
     </div>
