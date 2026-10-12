@@ -11,6 +11,6 @@
     "test": "jest",
     "format": "prettier --write .",
     "lint": "html-validate . && stylelint assets/stylesheets/*.css",
-    "prettier": "npm run format && npm run lint"
+    "prettier": "bun run format && bun run lint"
   }
 }
