@@ -26,7 +26,7 @@ Cron, the OS-based automation tool, provides the simplest automation option (whe
 
 systemd, or more specifically the daemons it manages as services, provide a increment over cron in respect of the ability to support long-running processes. For example, in the current setup local _s3_ buckets are provided by rclone's `serve` (from Dropbox) feature, the single command for which is run as a systemd unit. Although this example isn't an automation in and of itself, it can certainly support other automations (e.g. by providing storage).
 
-**Signs to move to the next platform**: When deploying an automation would necessitate calling a self-authored program from within the service (bad for reproducibility).
+**Signs to move to the next platform**: When an automation requires a number of interdependent actions to be executed.
 
 ## 3. Node-RED
 
@@ -40,7 +40,7 @@ Node-RED, a flow-based automation platform {% include ref.html ref="'Node-RED'" 
 
 This platform houses 'Organisers', such as Dropbox file organisation automations (e.g. distributing documents into date-based folders) and cleanup jobs for stale data; 'Parsers' such as receipt parsing and budget notifications, and OCR flows for scanned documents; and 'Media', exposed endpoints for media platforms (less automation-focused). As we are (arguably incorrectly) expanding the notion of home automation here to include support for any task that would be undertaken at home, it is worth flagging that Node-RED can, of course, conduct more traditional home automation tasks.
 
-**Signs to move to the next platform**: When, as with systemd, deploying an automation would require a small number of nodes to effectively be proxies for larger, external programs, _and/or_ require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain[^1].
+**Signs to move to the next platform**: When deploying an automation would require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain, _and/or_ require a small number of nodes to effectively be proxies for larger, external programs, which is bad for reproducibility[^1].
 
 ## 4. Home Assistant
 
