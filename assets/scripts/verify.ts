@@ -17,22 +17,24 @@ interface Component {
 class Verification {
   static fingerprint: string = 'DC96A97C0283AF8BA4BB51C1DAD7902C1932C290';
   post: string;
+  commit: string | undefined;
   components: Component[];
 
-  constructor(post: string) {
+  constructor(post: string, commit?: string) {
     this.post = post;
+    this.commit = commit;
     this.components = [
-      {title: 'signature', url: `/signatures/${post}.asc`, name: `${post}.asc`},
+      {title: 'signature', url: `${this.signatures()}.asc`, name: `${post}.asc`},
       {
         title: 'source',
-        url: `https://raw.githubusercontent.com/martinchapman/blog/main/_posts/${post}`,
+        url: `https://raw.githubusercontent.com/martinchapman/blog/${commit ?? 'main'}/_posts/${post}`,
         link: {
-          href: `https://raw.githubusercontent.com/martinchapman/blog/main/_posts/${post}`,
-          textContent: 'live copy'
+          href: `https://raw.githubusercontent.com/martinchapman/blog/${commit ?? 'main'}/_posts/${post}`,
+          textContent: commit ? `copy at ${commit.slice(0, 7)}` : 'live copy'
         },
         name: post
       },
-      {title: 'timestamp', url: `/signatures/${post}.tsr`, name: `${post}.tsr`, binary: true},
+      {title: 'timestamp', url: `${this.signatures()}.tsr`, name: `${post}.tsr`, binary: true},
       {
         title: 'FreeTSA CA certificate',
         url: '/signatures/cacert.pem',
@@ -49,8 +51,15 @@ class Verification {
   }
 
   static start(): void {
-    const post: string = new URLSearchParams(location.search).get('post') ?? '';
-    if (/^\d{4}-\d{2}-\d{2}-[\w-]+\.md$/.test(post)) new Verification(post).run();
+    const parameters: URLSearchParams = new URLSearchParams(location.search);
+    const post: string = parameters.get('post') ?? '';
+    const commit: string | undefined = parameters.get('commit') ?? undefined;
+    if (/^\d{4}-\d{2}-\d{2}-[\w-]+\.md$/.test(post) && (commit === undefined || Verification.isCommit(commit)))
+      new Verification(post, commit).run();
+  }
+
+  static isCommit(commit: string): boolean {
+    return /^[0-9a-f]{40}$/.test(commit);
   }
 
   static find<T extends Element>(parent: ParentNode, selector: string, type: new () => T): T {
@@ -111,6 +120,15 @@ class Verification {
     );
   }
 
+  static async predecessor(url: string): Promise<string | undefined> {
+    const response: Response = await fetch(url);
+    if (response.status === 404) return undefined;
+    if (!response.ok) throw new Error(`failed to load ${url} (${response.status})`);
+    const commit: string = (await response.text()).trim();
+    if (!Verification.isCommit(commit)) throw new Error(`unexpected previous version ${commit}`);
+    return commit;
+  }
+
   static async checkSignature(signature: Promise<ArrayBuffer>, source: Promise<ArrayBuffer>): Promise<string> {
     const key: openpgp.Key = await openpgp.readKey({
       armoredKey: await (
@@ -154,6 +172,29 @@ class Verification {
       .slice(0, 19)} UTC`;
   }
 
+  signatures(): string {
+    return `${this.commit ? `https://raw.githubusercontent.com/martinchapman/blog/${this.commit}/signatures` : '/signatures'}/${this.post}`;
+  }
+
+  renderPrevious(): void {
+    const previous: HTMLElement = Verification.find(document, '#previous', HTMLElement);
+    Verification.predecessor(`${this.signatures()}.prev`).then(
+      (commit: string | undefined) => {
+        previous.replaceChildren(
+          commit
+            ? Object.assign(document.createElement('a'), {
+                href: `?post=${this.post}&commit=${commit}`,
+                textContent: commit.slice(0, 7)
+              })
+            : 'none'
+        );
+      },
+      (error: Error) => {
+        previous.textContent = error.message;
+      }
+    );
+  }
+
   run(): void {
     const title: string = `verify '${Verification.titles()[this.post] ?? this.post}'`;
     const usage: HTMLElement = Verification.find(document, '#usage', HTMLElement);
@@ -162,6 +203,7 @@ class Verification {
     document.title = document.title.replace('verify', title);
     Verification.find(document, 'h1', HTMLHeadingElement).textContent = title;
     usage.textContent = (usage.textContent ?? '').replaceAll('post.md', this.post);
+    this.renderPrevious();
     this.components.forEach((component: Component, index: number) => {
       Verification.render(component, buffers[index]);
     });

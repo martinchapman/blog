@@ -9,7 +9,7 @@ staged_posts() {
 }
 
 remove_signature() {
-  git rm --quiet --ignore-unmatch "$directory/$(basename "$1")".{asc,tsr}
+  git rm --quiet --ignore-unmatch "$directory/$(basename "$1")".{asc,tsr,prev}
 }
 
 sign() {
@@ -22,9 +22,16 @@ timestamp() {
   openssl ts -verify -in "$2" -data "$1" -CAfile "$directory/cacert.pem" -untrusted "$directory/tsa.crt" > /dev/null
 }
 
+link_previous() {
+  local commit
+  commit=$(git log -1 --diff-filter=AM --format=%H -- "$1")
+  [ -z "$commit" ] || { echo "$commit" > "$2"; git add "$2"; }
+}
+
 sign_and_timestamp() {
   local signature="$directory/$(basename "$1").asc"
   local receipt="$directory/$(basename "$1").tsr"
+  link_previous "$signature" "$directory/$(basename "$1").prev"
   sign "$1" "$signature"
   timestamp "$signature" "$receipt"
   git add "$signature" "$receipt"

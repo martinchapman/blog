@@ -35,6 +35,10 @@ gpg --verify post.md.asc post.md
 openssl ts -verify -in post.md.tsr -data post.md.asc -CAfile cacert.pem -untrusted tsa.crt
 openssl ts -reply -in post.md.tsr -text | grep 'Time stamp'</code></pre>
 </div>
+<div class="mt-3">
+  <h2 class="h5">previous version</h2>
+  <p class="mb-0" id="previous">checking</p>
+</div>
 <script type="application/json" id="titles">
   { {% for entry in site.posts %}{{ entry.path | split: '/' | last | jsonify }}: {{ entry.title | downcase | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }
 </script>
