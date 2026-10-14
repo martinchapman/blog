@@ -40,7 +40,7 @@ Node-RED, a flow-based automation platform {% include ref.html ref="'Node-RED'" 
 
 This platform houses 'Organisers', such as Dropbox file organisation automations (e.g. distributing documents into date-based folders) and cleanup jobs for stale data; 'Parsers' such as receipt parsing and budget notifications, and OCR flows for scanned documents; and 'Media', exposed endpoints for media platforms (less automation-focused). As we are (arguably incorrectly) expanding the notion of home automation here to include support for any task that would be undertaken at home, it is worth flagging that Node-RED can, of course, conduct more traditional home automation tasks.
 
-**Signs to move to the next platform**: When deploying an automation would require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain, _and/or_ require a small number of nodes to effectively be proxies for larger, external programs, which is bad for reproducibility[^1].
+**Signs to move to the next platform**: When deploying an automation would require a significant number of nodes to be wired together, which would be unwieldy and difficult to maintain, _and/or_ require a small number of nodes to effectively be proxies for larger, external programs, which is bad for maintainability[^1].
 
 ## 4. Home Assistant
 
