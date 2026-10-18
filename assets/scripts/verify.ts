@@ -6,6 +6,11 @@ interface Link {
   textContent: string;
 }
 
+interface Previous {
+  commit: string;
+  post: string;
+}
+
 interface Component {
   title: string;
   url: string;
@@ -54,8 +59,12 @@ class Verification {
     const parameters: URLSearchParams = new URLSearchParams(location.search);
     const post: string = parameters.get('post') ?? '';
     const commit: string | undefined = parameters.get('commit') ?? undefined;
-    if (/^\d{4}-\d{2}-\d{2}-[\w-]+\.md$/.test(post) && (commit === undefined || Verification.isCommit(commit)))
+    if (Verification.isPost(post) && (commit === undefined || Verification.isCommit(commit)))
       new Verification(post, commit).run();
+  }
+
+  static isPost(post: string): boolean {
+    return /^\d{4}-\d{2}-\d{2}-[\w-]+\.md$/.test(post);
   }
 
   static isCommit(commit: string): boolean {
@@ -120,13 +129,15 @@ class Verification {
     );
   }
 
-  static async predecessor(url: string): Promise<string | undefined> {
+  static async predecessor(url: string, post: string): Promise<Previous | undefined> {
     const response: Response = await fetch(url);
     if (response.status === 404) return undefined;
     if (!response.ok) throw new Error(`failed to load ${url} (${response.status})`);
-    const commit: string = (await response.text()).trim();
-    if (!Verification.isCommit(commit)) throw new Error(`unexpected previous version ${commit}`);
-    return commit;
+    const text: string = (await response.text()).trim();
+    const [commit = '', previous = post]: string[] = text.split(' ');
+    if (!Verification.isCommit(commit) || !Verification.isPost(previous))
+      throw new Error(`unexpected previous version ${text}`);
+    return {commit, post: previous};
   }
 
   static async checkSignature(signature: Promise<ArrayBuffer>, source: Promise<ArrayBuffer>): Promise<string> {
@@ -178,13 +189,13 @@ class Verification {
 
   renderPrevious(): void {
     const previous: HTMLElement = Verification.find(document, '#previous', HTMLElement);
-    Verification.predecessor(`${this.signatures()}.prev`).then(
-      (commit: string | undefined) => {
+    Verification.predecessor(`${this.signatures()}.prev`, this.post).then(
+      (version: Previous | undefined) => {
         previous.replaceChildren(
-          commit
+          version
             ? Object.assign(document.createElement('a'), {
-                href: `?post=${this.post}&commit=${commit}`,
-                textContent: commit.slice(0, 7)
+                href: `?post=${version.post}&commit=${version.commit}`,
+                textContent: version.commit.slice(0, 7)
               })
             : 'none'
         );
