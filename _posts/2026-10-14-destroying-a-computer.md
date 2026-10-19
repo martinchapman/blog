@@ -2,6 +2,8 @@
 layout: default
 title: "'Mr. Robot' wipe scene"
 tag: media
+redirect_from:
+  - /2026/10/14/mr-robot-wipe-scene.html
 ---
 
 The 2015 television series _Mr. Robot_ features one of many scenes where the protagonist, Elliot, completely wipes his devices ('eps1.1_ones-and-zer0es.mpeg'; Season 1, Episode 2):
