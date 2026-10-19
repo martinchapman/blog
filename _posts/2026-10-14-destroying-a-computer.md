@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "'Mr. Robot' wipe scene"
+title: "Destroying a computer"
 tag: media
 redirect_from:
   - /2026/10/14/mr-robot-wipe-scene.html
