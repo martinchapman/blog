@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Destroying a computer"
-tag: media
+tag: reflection
 redirect_from:
   - /2026/10/14/mr-robot-wipe-scene.html
 ---
