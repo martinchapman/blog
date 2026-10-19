@@ -25,4 +25,4 @@ This reduces the dependency on any given device.
 Although the character of Elliot would likely restore his environment purely from memory, for me support is needed to achieve this clean-but-restorable setup, in the form of [infrastructure as code (IaC)](https://www.atlassian.com/microservices/cloud-computing/infrastructure-as-code).
 Notably the lack of dependency on a device, and the willingness to reset it, does not extend to the data held on that device, where I very much remain a [data hoarder](https://www.reddit.com/r/DataHoarder/).
 
-[^1] Other scenes, including the use of a [RaspberryPi in a hack](https://www.youtube.com/watch?v=XTN_-pRZjoU), are equally realistic.
+[^1]: Other scenes, including the use of a [Raspberry Pi in a hack](https://www.youtube.com/watch?v=XTN_-pRZjoU), are equally realistic.
