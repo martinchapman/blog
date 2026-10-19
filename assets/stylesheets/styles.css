@@ -5,7 +5,7 @@ body {
   font-style: normal;
   line-height: 200%;
   text-align: justify;
-  counter-reset: figcount;
+  counter-reset: figcount updatecount;
 }
 
 h1,
@@ -74,6 +74,17 @@ figcaption {
 
 .footnotes::before {
   content: 'Footnotes:';
+}
+
+.update {
+  border-top: 1px solid var(--mdb-border-color);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  counter-increment: updatecount;
+}
+
+.grid:has(.update ~ .update) .update::after {
+  content: ' #' counter(updatecount);
 }
 
 footer {
